@@ -71,6 +71,7 @@ exports.loginUser = async (req, res) => {
                     httpOnly: true,
                     maxAge: 24 * 60 * 60 * 1000,
                     secure: true,
+                    sameSite: "none",
                 });
 
                 // const user = await users.findOneAndUpdate({email: userFound.email},{$push:{refreshToken:newRefreshToken}},{new: true}).select('-password -refreshToken');
