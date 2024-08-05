@@ -66,7 +66,8 @@ exports.getRefreshToken = async (req, res) => {
             // send new refresh token created above in res.cookies 
             res.cookie("refreshToken", newRefreshToken, {
                 httpOnly: true,
-                maxAge: 24 * 60 * 60 * 1000
+                maxAge: 24 * 60 * 60 * 1000,
+                secure: true,
             });
 
             const { _id, name, email } = userFound;
