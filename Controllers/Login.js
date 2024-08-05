@@ -69,7 +69,8 @@ exports.loginUser = async (req, res) => {
                 // set refresh token in cookie
                 res.cookie("refreshToken", newRefreshToken, {
                     httpOnly: true,
-                    maxAge: 24 * 60 * 60 * 1000
+                    maxAge: 24 * 60 * 60 * 1000,
+                    domain: "onrender.com" 
                 });
 
                 // const user = await users.findOneAndUpdate({email: userFound.email},{$push:{refreshToken:newRefreshToken}},{new: true}).select('-password -refreshToken');
